@@ -6,9 +6,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-public class Main {
+public class DatabaseQuerryExecution {
 
     public static void main(String[] args)  {
+
         //open connection
         Database database = Database.getInstance();
         Connection conn = database.getConnection();
