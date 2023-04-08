@@ -1,4 +1,4 @@
-package org.example;
+package org.example.querries;
 
 import java.util.Date;
 

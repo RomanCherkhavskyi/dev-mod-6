@@ -1,9 +1,8 @@
-package org.example;
+package org.example.services;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Database {
 
@@ -40,27 +39,4 @@ public class Database {
         }
     }
 
-    public static void sendSQLExecute(String sql) throws SQLException {
-//open connection
-        Database database = Database.getInstance();
-        Connection conn = database.getConnection();
-//create statement
-        Statement statement = conn.createStatement();
-        statement.execute(sql);                             //send wrote file to H2 DB
-//close connection
-        statement.close();
-        database.closeConnection();
-    }
-
-    public static void sendSQLExecuteUpdate(String sql) throws SQLException {
-//open connection
-        Database database = Database.getInstance();
-        Connection conn = database.getConnection();
-//create statement
-        Statement statement = conn.createStatement();
-        statement.executeUpdate(sql);                             //send wrote file to H2 DB
-//close connection
-        statement.close();
-        database.closeConnection();
-    }
 }

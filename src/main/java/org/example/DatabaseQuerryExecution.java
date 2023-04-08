@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.querries.*;
+import org.example.services.Database;
+import org.example.services.DatabaseQueryService;
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -9,6 +13,9 @@ import java.util.List;
 public class DatabaseQuerryExecution {
 
     public static void main(String[] args)  {
+
+        new FlywayMigration().flywayMigration();
+
 
         //open connection
         Database database = Database.getInstance();

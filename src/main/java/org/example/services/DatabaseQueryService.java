@@ -1,4 +1,7 @@
-package org.example;
+package org.example.services;
+
+import org.example.*;
+import org.example.querries.*;
 
 import java.io.IOException;
 import java.sql.Connection;

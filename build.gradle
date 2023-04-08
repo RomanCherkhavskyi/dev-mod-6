@@ -1,6 +1,19 @@
+buildscript {
+    dependencies {
+        classpath 'com.h2database:h2:2.1.214'
+    }
+}
+
 plugins {
     id 'java'
+    id "org.flywaydb.flyway" version "9.8.1"
 }
+
+flyway {
+    url = 'jdbc:h2:C:\\goit\\dev\\dev-mod-6\\MyDB'
+    user = ''
+}
+
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -14,9 +27,11 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     // https://mvnrepository.com/artifact/com.h2database/h2
     implementation 'com.h2database:h2:2.1.214'
-
-
+// https://mvnrepository.com/artifact/org.flywaydb/flyway-core
+    implementation 'org.flywaydb:flyway-core:9.16.3'
 }
+
+
 
 test {
     useJUnitPlatform()
