@@ -9,8 +9,7 @@ public class Database {
     private static Database instance = new Database();      //singleton instance
     private Connection connection;
     private static final String url = "jdbc:h2:./MyDB"; // JDBC URL for connect to H2 Database
-//    private String username = "sa"; // user name
-//    private String password = ""; // user pass
+
 
     private Database() {
         try {
@@ -31,12 +30,6 @@ public class Database {
         return connection;
     }
 
-    public void closeConnection() {
-        try {
-            connection.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+
 
 }
