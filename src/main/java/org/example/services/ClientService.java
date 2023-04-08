@@ -83,15 +83,24 @@ public class ClientService {
         Database database = Database.getInstance();
         Connection conn = database.getConnection();
 
-        Statement statement;
+
+            String sql = "DELETE FROM client WHERE id=?";
+        PreparedStatement statement;
         try {
-            statement = conn.createStatement();
-            statement.executeUpdate("DELETE FROM client WHERE id = "+(int)id);
+            statement = conn.prepareStatement(sql);
+            statement.setInt(1, (int) id);
+            statement.executeUpdate();
             statement.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }a
+
+
+        }
+
+
+
+
 
 
     public List<Client> listAll() throws SQLException {

@@ -29,23 +29,27 @@ public class Main {
 
 
 //get by id
-    System.out.println(new ClientService().getById(4l));
+    System.out.println(new ClientService().getById(4L));
 
 
 //delete by id
-    new ClientService().deleteById(2l);
+    new ClientService().deleteById(6L);
 //rename client
-    new ClientService().setName(3l,"Eliot");
+    new ClientService().setName(3L,"Eliot");
 
 // read all clients
         try {
             List<Client> clients = new ClientService().listAll();
             System.out.println(clients.toString());
-            System.out.println("----");
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
